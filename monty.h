@@ -61,6 +61,9 @@ void monty_swap(stack_t **stack, unsigned int line_number);
 void monty_add(stack_t **stack, unsigned int line_number);
 void monty_nop(stack_t **stack, unsigned int line_number);
 
+void set_op_tok_error(int error_code);
+int check_mode(stack_t *stack);
+
 
 char *get_int(int n);
 char **strtow(char *str, char *delims);
