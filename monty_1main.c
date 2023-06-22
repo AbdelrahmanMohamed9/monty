@@ -3,6 +3,8 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
+
+
 /**
  * main - entry point for the Monty Interp
  * @argc: count of arguments passed to the program
@@ -12,16 +14,15 @@
 
 int main(int argc, char **argv)
 {
-	char **p_tks = NULL;
-	FILE *srp_fd = NULL;
-	int x_cd = EXIT_SUCCESS;
+	FILE *script_fd = NULL;
+	int exit_code = EXIT_SUCCESS;
 
 	if (argc != 2)
 		return (usage_error());
-	srp_fd = fopen(argv[1], "r");
-	if (srp_fd == NULL)
+	script_fd = fopen(argv[1], "r");
+	if (script_fd == NULL)
 		return (f_open_error(argv[1]));
-	x_cd = run_monty(srp_fd);
-	fclose(srp_fd);
-	return (x_cd);
+	exit_code = run_monty(script_fd);
+	fclose(script_fd);
+	return (exit_code);
 }
