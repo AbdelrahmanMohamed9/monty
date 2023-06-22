@@ -43,6 +43,11 @@ typedef struct instruction_s
 } instruction_t;
 
 
+int run_monty(FILE *script_fd);
+int init_stack(stack_t **stack);
+void free_stack(stack_t **stack);
+unsigned int token_arr_len(void);
+
 void monty_sub(stack_t **stack, unsigned int line_number);
 void monty_div(stack_t **stack, unsigned int line_number);
 void monty_mul(stack_t **stack, unsigned int line_number);
